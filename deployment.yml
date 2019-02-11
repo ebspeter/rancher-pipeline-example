@@ -2,6 +2,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: hello-world
+  namespace: default
   labels:
     app: hello-world
 spec:
@@ -17,5 +18,8 @@ spec:
       imagePullSecrets:
         - name: pipeline-docker-registry
       containers:
-        - name: hello-world
+        - env:
+            - name: GIT_COMMIT
+              value: ${CICD_GIT_COMMIT}
+          name: hello-world
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}

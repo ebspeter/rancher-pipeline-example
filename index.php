@@ -1,3 +1,4 @@
 <?php
 
-echo 'Hello from ' . getenv('HOSTNAME');
+echo 'Hello from host:' . getenv('HOSTNAME');
+echo 'Latest commit:' . getenv('GIT_COMMIT');
