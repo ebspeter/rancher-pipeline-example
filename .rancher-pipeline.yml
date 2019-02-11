@@ -1,12 +1,12 @@
 stages:
-- name: Build
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: rancher-pipeline-example
-- name: Deploy
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
+  - name: Build
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./Dockerfile
+          buildContext: .
+          tag: rancher-pipeline-example:${CICD_EXECUTION_SEQUENCE}
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: ./deployment.yaml
 timeout: 60
