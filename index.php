@@ -1,4 +1,4 @@
 <?php
 
 echo 'Hello from host:' . getenv('HOSTNAME');
-echo 'Latest commit:' . getenv('GIT_COMMIT');
+echo "\n\nLatest commit: " . getenv('GIT_COMMIT');
