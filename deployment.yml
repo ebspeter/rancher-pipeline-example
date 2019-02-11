@@ -15,7 +15,7 @@ spec:
         app: hello-world
     spec:
       imagePullSecrets:
-        - name: pipeline-secret
+        - name: p-dggb5-dockerregistrypdggb5pipeline
       containers:
         - name: hello-world
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
